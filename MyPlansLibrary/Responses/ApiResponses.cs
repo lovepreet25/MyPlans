@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyPlansLibrary.ApiResponses
+{
+    public class ApiResponses
+    {
+       public string Message { get; set; }
+        public bool IsSuccess { get; set; }
+    }
+    public class ApiResposes<T> : ApiResponses
+    {
+        public T Value { get; set; }
+    }
+}
