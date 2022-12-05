@@ -1,6 +1,15 @@
-﻿namespace MyPlans.Components.Auth
+﻿using Microsoft.AspNetCore.Components;
+using MyPlans.Pages.Auth;
+using MyPlansLibrary.Models;
+namespace MyPlans.Components.Auth
 {
-    public class LoginForm
+    public partial class LoginForm : ComponentBase
     {
+        [Inject]
+        public HttpClient HttpClient { get; set; }
+
+        private LoginApi _model = new LoginApi();
+
+
     }
 }
