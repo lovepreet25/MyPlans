@@ -7,13 +7,18 @@
     </MudCardHeader>
     <MudCard>
         <MudCardContent>
-            <MudTextField Label="Email" HelperText="Required" Placeholder="abc@myplans.com" @bind-Value = "_model.Email" />
-            <MudTextField InputType= "InputType.Password" Label="Password" HelperText="Required" Placeholder="Password" @bind-Value="_model.Password" />
-
+            <MudTextField Label="Email" HelperText="Required" Placeholder="abc@myplans.com" @bind-Value = "@_model.Email" />
+            <MudTextField InputType= "InputType.Password" Label="Password" HelperText="Required" Placeholder="Password" @bind-Value="@_model.Password" />
+            <ValidationSummary/>
+            @if (!string.IsNullOrWhiteSpace(_errorMessage))
+            {
+                <MudAlert Severity="Severity.Error" Class="my-2" Variant="Variant.Outlined">@_errorMessage</MudAlert>
+            }
         </MudCardContent>
+
         <MudCardActions>
-            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" >LogIn</MudButton>
-            <MudButton  Variant="Variant.Outlined" Color="Color.Secondary" Class="m-lg-1">SignUp</MudButton>
+            <MudButton ButtonType="ButtonType.Submit" Disabled = "_isBusy" Variant="Variant.Filled" Color="Color.Primary" >LogIn</MudButton>
+            <MudButton Variant="Variant.Outlined" Disabled="_isBusy" Color="Color.Secondary" Class="m-lg-1">SignUp</MudButton>
 
         </MudCardActions>
     </MudCard>

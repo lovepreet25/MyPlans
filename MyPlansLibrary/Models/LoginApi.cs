@@ -16,7 +16,7 @@ namespace MyPlansLibrary.Models
         [EmailAddress]
         public string Email { get; set; }
         [Required]
-        [StringLength(6)]
+        [StringLength(20, MinimumLength = 6)]
         public string Password { get; set; }
 
         

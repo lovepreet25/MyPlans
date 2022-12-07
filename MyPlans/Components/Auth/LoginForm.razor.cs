@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Components;
 using MyPlans.Pages.Auth;
 using MyPlansLibrary.Models;
-
+using MyPlansLibrary.Responses;
+using MyPlansLibrary;
 using MyPlans.Components;
 using System.Net.Http;
 using System.Threading.Tasks;
-
-
+using Blazored.LocalStorage;
+using System.Net.Http.Json;
+using System.ComponentModel.DataAnnotations;
+using MyPlansLibrary.ApiResponses;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace MyPlans.Components.Auth
 {
@@ -16,15 +20,42 @@ namespace MyPlans.Components.Auth
         [Inject]
         public HttpClient HttpClient { get; set; }
 
-
+        [Inject]
+        public NavigationManager Navigation { get; set; }
+        [Inject]
+        public AuthenticationStateProvider AuthenticationStateProvider { get; set; } 
         public LoginApi _model = new LoginApi();
-
+        private bool _isBusy = false;
+        private string _errorMessage = string.Empty;
+        [Inject]
+        public ILocalStorageService StorageService { get; set; }    
         private async Task loginUserAsync()
         {
-            throw new NotImplementedException();
+            _isBusy = false;
+            _errorMessage = string.Empty;
+            var response = await HttpClient.PostAsJsonAsync("/api/v2/auth/login", _model);
+            if (response.IsSuccessStatusCode)
+            { 
+             var result = await response.Content.ReadFromJsonAsync<ApiResponses<LoginApiResult>>();
+
+                await StorageService.SetItemAsStringAsync("access_token", result.Value.Token);
+                await StorageService.SetItemAsync<DateTime>("expiry_date", result.Value.ExpiryDate);
+
+                await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
+                Navigation.NavigateTo("/");
+
+
+            }
+            else
+            {
+                var errResult = await response.Content.ReadFromJsonAsync<ApiErrorsResponses>();
+                 _errorMessage = errResult.Message;
+            }
+            _isBusy = false;  
         }
 
-
+      
     }
 }
      
