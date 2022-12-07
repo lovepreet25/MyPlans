@@ -19,9 +19,6 @@ namespace MyPlansLibrary.Models
         [StringLength(6)]
         public string Password { get; set; }
 
-        internal class LoginApi
-        {
-
-        }
+        
     }
 }

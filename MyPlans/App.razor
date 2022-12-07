@@ -1,7 +1,7 @@
 ﻿<CascadingAuthenticationState>
 <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-<<<<<<< HEAD
+
         <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" >
             <NotAuthorized>
                 <h3>
@@ -9,16 +9,8 @@
                 </h3>
             </NotAuthorized>
             </AuthorizeRouteView>
-=======
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
-                <NotAuthorized>
-                    <h3>
-                        You don't have an account.
-                    </h3>
-                </NotAuthorized>
-            </AuthorizeRouteView>
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
->>>>>>> 00d9e338268d23b9c71728cb641b500305f4c01e
+
+           
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
