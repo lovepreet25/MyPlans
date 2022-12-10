@@ -28,18 +28,18 @@ namespace MyPlans.Components.Auth
         private bool _isBusy = false;
         private string _errorMessage = string.Empty;
         [Inject]
-        public ILocalStorageService StorageService { get; set; }    
+        public ILocalStorageService StorageServices { get; set; }    
         private async Task loginUserAsync()
         {
-            _isBusy = false;
+            _isBusy = true;
             _errorMessage = string.Empty;
             var response = await HttpClient.PostAsJsonAsync("/api/v2/auth/login", _model);
             if (response.IsSuccessStatusCode)
             { 
              var result = await response.Content.ReadFromJsonAsync<ApiResponses<LoginApiResult>>();
 
-                await StorageService.SetItemAsStringAsync("access_token", result.Value.Token);
-                await StorageService.SetItemAsync<DateTime>("expiry_date", result.Value.ExpiryDate);
+                await StorageServices.SetItemAsStringAsync("access_token", result.Value.Token);
+                await StorageServices.SetItemAsync<DateTime>("expiry_date", result.Value.ExpiryDate);
 
                 await AuthenticationStateProvider.GetAuthenticationStateAsync();
 
