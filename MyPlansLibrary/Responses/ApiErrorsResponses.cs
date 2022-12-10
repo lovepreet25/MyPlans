@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyPlansLibrary.Responses
 {
-    internal class ApiErrorsResponses
+    public class ApiErrorsResponses
     {
 
        

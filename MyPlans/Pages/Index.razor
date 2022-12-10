@@ -1,19 +1,25 @@
 ﻿@page "/"
-@layout LoginLayout
+
 <PageTitle>Index</PageTitle>
 
-<h1>The Place Where Dreams Come true</h1>
 
-Welcome to your my plans.
+<h1> Welcome to my Plans </h1>
+
+The Palce Where Dreams Comes True
+
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 <AuthorizeView>
     <Authorized>
         <h2>
-            Welcome @context.User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)
+            Welcome
         </h2>
     </Authorized>
     <NotAuthorized>
         You don't have an account. Please Login
+        <MudLink Href="/auth/login"> LogIn </MudLink>
     </NotAuthorized>
-</AuthorizeView>
+    </AuthorizeView>
+    @code{
+
+    }

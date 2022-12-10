@@ -1,5 +1,40 @@
-﻿<h3>LoginForm</h3>
+@namespace MyPlans.Components.Auth
+
+<EditForm Model="_model" OnInvalidSubmit="loginUserAsync">
+    <DataAnnotationsValidator/>
+    <MudCardHeader>
+        <CardHeaderContent>
+        <MudText Typo="Typo.h5">Welcome to the Place Where Dreams Comes True</MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+
+    <MudCard>
+        <MudCardContent>
+            <MudTextField Label="Email" HelperText="Required" Placeholder="abc@myplans.com" @bind-Value = "@_model.Email" />
+            <MudTextField InputType= "InputType.Password" Label="Password" HelperText="Required" Placeholder="Password" @bind-Value="@_model.Password" />
+            <ValidationSummary />
+
+
+
+            @if (!string.IsNullOrWhiteSpace(_errorMessage))
+            {
+                <MudAlert Severity="Severity.Error" Class="my-2" Variant="Variant.Outlined">@_errorMessage</MudAlert>
+            }
+        </MudCardContent>
+
+        <MudCardActions>
+            <MudButton ButtonType="ButtonType.Submit" Disabled = "_isBusy" Variant="Variant.Filled" Color="Color.Primary" >LogIn</MudButton>
+            <MudButton Variant="Variant.Outlined" Disabled="_isBusy" Color="Color.Secondary" Class="m-lg-1">SignUp</MudButton>
+
+        </MudCardActions>
+    </MudCard>
+</EditForm>
+
+﻿
+
 
 @code {
+
+
 
 }

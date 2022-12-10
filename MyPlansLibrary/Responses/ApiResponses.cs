@@ -8,10 +8,15 @@ namespace MyPlansLibrary.ApiResponses
 {
     public class ApiResponses
     {
+        public string message()
+        {
+            return null;
+    }
        public string Message { get; set; }
+        
         public bool IsSuccess { get; set; }
     }
-    public class ApiResposes<T> : ApiResponses
+    public class ApiResponses<T> : ApiResponses
     {
         public T Value { get; set; }
     }

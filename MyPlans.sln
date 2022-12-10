@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPlans", "MyPlans\MyPlans.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPlansLibrary", "MyPlansLibrary\MyPlansLibrary.csproj", "{AF2E849C-F76B-4341-98AA-67C633FDE41A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlansTestProject", "PlansTestProject\PlansTestProject.csproj", "{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{AF2E849C-F76B-4341-98AA-67C633FDE41A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF2E849C-F76B-4341-98AA-67C633FDE41A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF2E849C-F76B-4341-98AA-67C633FDE41A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MyPlansLibrary.Models
 {
-    internal class Class1
-    {
+    public class LoginApiResult
 
+    {
+        public string Token { get; set; }
+        public DateTime ExpiryDate { get; set; }
     }
 }
