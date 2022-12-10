@@ -1,5 +1,6 @@
 using FluentAssertions;
 using MyPlansLibrary.ApiResponses;
+using MyPlansLibrary.Responses;
 
 namespace PlansTestProject.LoginRequestTests
 {
@@ -22,7 +23,23 @@ namespace PlansTestProject.LoginRequestTests
             result.Should().Be("Success");
 
         }
-       
+        [Fact]
+        public async Task ErrorIsSuccess()
+        {
+            var res = new ApiErrorsResponses();
+            var result = res.IsSuccess;
+            result.Should().Be(true);
+
+        }
+        [Fact]
+        public async Task ErrorMessage()
+        {
+            var res = new ApiErrorsResponses();
+            var result = res.Message;
+            result.Should().Be("Success");
+
+        }
+
 
     }
 }
