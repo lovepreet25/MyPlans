@@ -54,7 +54,10 @@ namespace MyPlans.Components.Auth
             }
             _isBusy = false;  
         }
-
+        private void RedirectToRegister()
+        {
+            Navigation.NavigateTo("auth/register");
+        }
       
     }
 }

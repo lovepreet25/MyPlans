@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazored.FluentValidation" Version="2.1.0-preview.2" />
     <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.10" />
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyPlansLibrary\MyPlansLibrary.csproj" />
+    <ProjectReference Include="..\MyPlansServices\MyPlansServices.csproj" />
   </ItemGroup>
 
   <ItemGroup>
