@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPlansLibrary", "MyPlansLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlansTestProject", "PlansTestProject\PlansTestProject.csproj", "{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPlansServices", "MyPlansServices\MyPlansServices.csproj", "{D82DDC53-93D7-4E02-BE7E-4966F007D3C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPlansServices", "MyPlansServices\MyPlansServices.csproj", "{D82DDC53-93D7-4E02-BE7E-4966F007D3C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
