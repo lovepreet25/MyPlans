@@ -14,21 +14,9 @@ namespace MyPlansLibrary.Validator
         {
             RuleFor(p => p.Email)
                 .NotEmpty()
-            .WithMessage("Email is required")
-            .EmailAddress()
-            .WithMessage("Email is not a valid email Address ");
-
-            RuleFor(p => p.Password)
-                .NotEmpty()
-            .WithMessage("Password is required")
-            .MaximumLength(16)
-            .WithMessage("Password must be at least 5 character");
-
-
-            RuleFor(p => p.ConfirmPassword)
-               .NotEmpty()
-               .Equal(p => p.Password)
-               .WithMessage("Confirm Password should match the Password ");
+                .WithMessage("Email is required")
+                .EmailAddress()
+                .WithMessage("Email is not a valid email Address ");
 
             RuleFor(p => p.FirstName)
                 .NotEmpty()
@@ -41,6 +29,20 @@ namespace MyPlansLibrary.Validator
                 .WithMessage("Last Name is Required")
                 .MaximumLength(25)
                 .WithMessage("Last Name should not be more than 25 characters");
+
+            RuleFor(p => p.Password)
+                .NotEmpty()
+                .WithMessage("Password is required")
+                .MinimumLength(5)
+                .WithMessage("Password must be at least 5 character");
+
+
+            RuleFor(p => p.ConfirmPassword)
+               .NotEmpty()
+               .Equal(p => p.Password)
+               .WithMessage("Confirm Password should match the Password ");
+
+            
 
 
 
