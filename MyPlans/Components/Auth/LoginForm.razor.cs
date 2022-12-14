@@ -35,9 +35,9 @@ namespace MyPlans.Components.Auth
             _errorMessage = string.Empty;
             var response = await HttpClient.PostAsJsonAsync("/api/v2/auth/login", _model);
             if (response.IsSuccessStatusCode)
-            { 
-             var result = await response.Content.ReadFromJsonAsync<ApiResponses<LoginApiResult>>();
-
+            {
+                var result = await response.Content.ReadFromJsonAsync<ApiResponses<LoginApiResult>>();
+                // Store it in local storage 
                 await StorageServices.SetItemAsStringAsync("access_token", result.Value.Token);
                 await StorageServices.SetItemAsync<DateTime>("expiry_date", result.Value.ExpiryDate);
 
