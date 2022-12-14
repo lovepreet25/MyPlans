@@ -56,7 +56,7 @@ namespace MyPlans.Components.Auth
         }
         private void RedirectToRegister()
         {
-            Navigation.NavigateTo("auth/register");
+            Navigation.NavigateTo("/auth/register");
         }
       
     }
