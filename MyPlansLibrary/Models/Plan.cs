@@ -7,3 +7,4 @@
         public string Description { get; set; }
         public string CoverUrl { get; set; }
     }
+}
