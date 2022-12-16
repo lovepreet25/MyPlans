@@ -46,6 +46,14 @@ namespace MyPlans.Components.PlansComponents
             _isBusy = false;
             return null;
         }
+        
+        private bool _isCardsViewEnabled = true;
+        private void SetCardView()
+        {
+            _isCardsViewEnabled = true;
+        }
+        private void SetTableView()
+        { _isCardsViewEnabled = false; }
 
     }
 }

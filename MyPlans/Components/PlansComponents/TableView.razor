@@ -4,7 +4,7 @@
 <MudTable ServerData="@(new Func<TableState, Task<TableData<Plan>>>(ServerReloadAsync))"
           Dense="true" Hover="true" @ref="_table">
     <ToolBarContent>
-        <MudText Typo="Typo.h6">My Plans</MudText>
+       
         <MudSpacer />
         <MudTextField T="string" ValueChanged="@(s=>OnSearch(s))" Placeholder="Search" Adornment="Adornment.Start"
                       AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
@@ -16,7 +16,7 @@
         <MudTh><MudTableSortLabel SortLabel="position_field" T="Plan">Actions</MudTableSortLabel></MudTh>
     </HeaderContent>
     <RowTemplate>
-        <MudTd DataLabel="Nr"><img src="@context.CoverUrl"</MudTd>
+        <MudTd DataLabel="Nr"><img src="@context.CoverUrl" style="width:80px "</MudTd>
         <MudTd DataLabel="Sign">@context.Title</MudTd>
         <MudTd DataLabel="Name">@context.Description</MudTd>
         <MudTd DataLabel="Position">
@@ -27,12 +27,7 @@
 
            
     </RowTemplate>
-    <NoRecordsContent>
-        <MudText>No matching records found</MudText>
-    </NoRecordsContent>
-    <LoadingContent>
-        <MudText>Loading...</MudText>
-    </LoadingContent>
+    
     <PagerContent>
         <MudTablePager />
     </PagerContent>
