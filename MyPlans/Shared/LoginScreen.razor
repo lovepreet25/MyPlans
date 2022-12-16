@@ -1,3 +1,4 @@
+@inject Blazored.LocalStorage.ILocalStorageService Storage
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager Navigation
 @using System.Security.Claims
@@ -21,7 +22,11 @@
 
     private async Task LogOutAsync()
     {
+        await Storage.RemoveItemAsync("access_token");
+        await Storage.RemoveItemAsync("expiry_date");
         await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        Navigation.NavigateTo("auth/login");
+
     }
 
 }

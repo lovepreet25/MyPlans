@@ -11,6 +11,8 @@ namespace MyPlansServices.Interfaces
     public interface IPlanServices
     {
         Task<ApiResponses<Pagination<Plan>>> GetPlansAsync(string query = null , int pageNumber = 1, int pageSize = 10);
+
+        Task<ApiResponses<PlanDetails>> GetByIdAsync(string id);
         Task<ApiResponses<PlanDetails>> CreateAsync(PlanDetails model, FormFile coverFile);
         Task<ApiResponses<PlanDetails>> EditAsync(PlanDetails model, FormFile coverFile);
     }

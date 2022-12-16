@@ -41,10 +41,10 @@ else
     <MudGrid Spacing="2">
         @if (_result != null && _result.Records != null)
         {
-            foreach(var Plan in _result.Records)
+            foreach(var plan in _result.Records)
             {
                 <MudItem sm="12" md = "4" lg = "3">
-             <PlanCard Plan = "Plan" />
+             <PlanCard Plan = "plan" OnEditClicked="() => EditPlan(plan)" />
              </MudItem>
             }
         }
