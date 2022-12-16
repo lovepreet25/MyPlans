@@ -19,18 +19,8 @@ namespace MyPlans.Components.Auth
     {
         [Inject]
         public HttpClient HttpClient { get; set; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        private LoginApi _model = new LoginApi();
-=======
-=======
->>>>>>> af0ec36aa12348dc0f5f7ecdad7a84ccb5cc8b81
-=======
->>>>>>> af0ec36aa12348dc0f5f7ecdad7a84ccb5cc8b81
-=======
->>>>>>> 37abf200acb0d7327f8d3bc4bd94cf2cbba04838
+        
+
 
         [Inject]
         public NavigationManager Navigation { get; set; }
@@ -49,7 +39,7 @@ namespace MyPlans.Components.Auth
             if (response.IsSuccessStatusCode)
             {
                 var result = await response.Content.ReadFromJsonAsync<ApiResponses<LoginApiResult>>();
-                // Store it in local storage 
+                
                 await StorageServices.SetItemAsStringAsync("access_token", result.Value.Token);
                 await StorageServices.SetItemAsync<DateTime>("expiry_date", result.Value.ExpiryDate);
 
