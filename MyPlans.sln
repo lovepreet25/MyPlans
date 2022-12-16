@@ -10,7 +10,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPlans", "MyPlans\MyPlans.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPlansLibrary", "MyPlansLibrary\MyPlansLibrary.csproj", "{AF2E849C-F76B-4341-98AA-67C633FDE41A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlansTestProject", "PlansTestProject\PlansTestProject.csproj", "{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlansTestProject", "PlansTestProject\PlansTestProject.csproj", "{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPlansServices", "MyPlansServices\MyPlansServices.csproj", "{D82DDC53-93D7-4E02-BE7E-4966F007D3C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,10 @@ Global
 		{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DB3C78D-ACD5-44E8-8A3F-E2CB681A845E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82DDC53-93D7-4E02-BE7E-4966F007D3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82DDC53-93D7-4E02-BE7E-4966F007D3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82DDC53-93D7-4E02-BE7E-4966F007D3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82DDC53-93D7-4E02-BE7E-4966F007D3C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

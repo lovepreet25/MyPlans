@@ -21,10 +21,16 @@ namespace MyPlans.Components.Auth
         public HttpClient HttpClient { get; set; }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
         private LoginApi _model = new LoginApi();
 =======
 =======
 >>>>>>> af0ec36aa12348dc0f5f7ecdad7a84ccb5cc8b81
+=======
+>>>>>>> af0ec36aa12348dc0f5f7ecdad7a84ccb5cc8b81
+=======
+>>>>>>> 37abf200acb0d7327f8d3bc4bd94cf2cbba04838
 
         [Inject]
         public NavigationManager Navigation { get; set; }
@@ -51,9 +57,15 @@ namespace MyPlans.Components.Auth
 
                 Navigation.NavigateTo("/");
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> af0ec36aa12348dc0f5f7ecdad7a84ccb5cc8b81
 =======
 >>>>>>> af0ec36aa12348dc0f5f7ecdad7a84ccb5cc8b81
+=======
+>>>>>>> af0ec36aa12348dc0f5f7ecdad7a84ccb5cc8b81
+=======
+>>>>>>> 37abf200acb0d7327f8d3bc4bd94cf2cbba04838
 
 
             }
@@ -64,7 +76,14 @@ namespace MyPlans.Components.Auth
             }
             _isBusy = false;  
         }
+<<<<<<< HEAD
 
+=======
+        private void RedirectToRegister()
+        {
+            Navigation.NavigateTo("auth/register");
+        }
+>>>>>>> 37abf200acb0d7327f8d3bc4bd94cf2cbba04838
       
     }
 }
