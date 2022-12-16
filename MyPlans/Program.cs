@@ -13,8 +13,8 @@ using System.Threading.Tasks;
 using MudBlazor.Services;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Authorization;
-using MyPlansServices.Exceptions;
 using MyPlansServices.Interfaces;
+using MyPlansServices;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -31,5 +31,6 @@ builder.Services.AddScoped<AuthenticationStateProvider, JwtAuthenticationStatePr
 builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<IAuthenticationServices, HttpAuthenticationServices>();
+builder.Services.AddScoped<IPlanServices, HttpPlansServices>();
 
 await builder.Build().RunAsync();

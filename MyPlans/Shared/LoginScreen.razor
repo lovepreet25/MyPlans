@@ -24,6 +24,6 @@
         await Storage.RemoveItemAsync("access_token");
         await Storage.RemoveItemAsync("expiry_date");
         await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        Navigation.NavigateTo("/Auth/Login");
+        Navigation.NavigateTo("/auth/login");
     }
 }

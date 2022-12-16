@@ -1,0 +1,44 @@
+﻿@namespace MyPlans.Components.PlansComponents
+
+
+@if(IsBusy)
+{
+            <MudCard Elevation="0">
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="200px" />
+                <MudCardContent>
+                    <MudSkeleton Width="30%" Height="42px;" />
+                    <MudSkeleton Width="80%" />
+                    <MudSkeleton Width="100%" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudSkeleton Width="64px" Height="40px" Class="ml-2" />
+                    <MudSkeleton Width="105px" Height="40px" Class="ml-3" />
+                </MudCardActions>
+            </MudCard>
+   
+
+}
+
+<MudCard>
+    <MudCardHeader>
+        
+        <CardHeaderContent>
+            <MudText Typo="Typo.body1">@Plan?.Title</MudText>
+     
+        </CardHeaderContent>
+        
+    </MudCardHeader>
+    <MudCardMedia Image="@Plan?.CoverUrl" Height="250" />
+    <MudCardContent>
+        <MudText Typo="Typo.body2">@Plan?.Description</MudText>
+    </MudCardContent>
+    <MudCardActions>
+        <MudIconButton Icon="@Icons.Material.Filled.Preview" OnClick="async() => await OnViewClicked.InvokeAsync(Plan)" Color="Color.Default" />
+        <MudIconButton Icon="@Icons.Material.Filled.Edit" OnClick="async() => await OnEditClicked.InvokeAsync(Plan)" Color="Color.Default" />
+        <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="async() => await OnDeleteClicked.InvokeAsync(Plan)" Color="Color.Error" />
+
+    </MudCardActions>
+</MudCard>
+@code {
+
+}
