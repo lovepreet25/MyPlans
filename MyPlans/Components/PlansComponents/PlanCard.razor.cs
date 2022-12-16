@@ -6,7 +6,7 @@ namespace MyPlans.Components.PlansComponents
     public partial class PlanCard
     {
         [Parameter]
-        public Plan Plan { get; set; } = new();
+        public Plan Plan { get; set; }
         [Parameter]
         public bool IsBusy { get; set; }
         [Parameter]
