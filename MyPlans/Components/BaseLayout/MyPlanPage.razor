@@ -1,0 +1,14 @@
+﻿@namespace MyPlans.Components.BaseLayout
+
+<MudContainer
+    MaxWidth="MaxWidth.Large">
+    
+    <MudText Typo="Typo.h5">
+        @Title
+    </MudText>
+    <MudBreadcrumbs Items="Breadcrumbs"></MudBreadcrumbs>
+    @ChildContent
+</MudContainer>
+@code {
+
+}

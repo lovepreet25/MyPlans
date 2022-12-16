@@ -17,7 +17,7 @@ namespace MyPlans.Components.Auth
 
         
 
-        
+
 
         private RegisterAPI _model = new();
         private bool _isBusy = false;

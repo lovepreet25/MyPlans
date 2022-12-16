@@ -1,0 +1,61 @@
+﻿@namespace MyPlans.Components.PlansComponents
+<MudPaper Class="py-2 px-2">
+    <div class = "d-flex">
+        <MudTextField @bind-Value="_query" Variant="Variant.Outlined" />
+        <MudIconButton Color="Color.Primary" Icon="@Icons.Filled.Search" OnClick="async () => await GetPlansAsync(1)">
+
+        </MudIconButton>
+
+
+    </div>
+</MudPaper>
+@if (_isBusy)
+{
+<MudGrid Spacing="2">
+ <MudItem sm="12" md = "4" lg = "3">
+            <PlanCard IsBusy=true/>
+    </MudItem>
+        <MudItem sm="12" md="4" lg="3">
+            <PlanCard IsBusy=true />
+        </MudItem>
+        <MudItem sm="12" md = "4" lg = "3">
+            <PlanCard IsBusy=true/>
+    </MudItem>
+        <MudItem sm="12" md="4" lg="3">
+            <PlanCard IsBusy=true />
+        </MudItem>
+        <MudItem sm="12" md="4" lg="3">
+            <PlanCard IsBusy=true />
+        </MudItem>
+        <MudItem sm="12" md="4" lg="3">
+            <PlanCard IsBusy=true />
+        </MudItem>
+        <MudItem sm="12" md="4" lg="3">
+            <PlanCard IsBusy=true />
+        </MudItem>
+
+    </MudGrid>
+}
+else
+{
+    <MudGrid Spacing="2">
+        @if (_result != null && _result.Records != null)
+        {
+            foreach(var Plan in _result.Records)
+            {
+                <MudItem sm="12" md = "4" lg = "3">
+             <PlanCard Plan = "Plan" />
+             </MudItem>
+            }
+        }
+    </MudGrid>
+
+}
+<div class="d-flex oi-justify-center py-2 px-2 mt-4">
+    @for (int i =1; i <= _result.TotalPages; i++)
+    {
+        int index = i;
+        <MudButton Variant="Variant.Filled" Disabled="@(_pageNumber == index)" Color="Color.Primary" Class="m-4" OnClick="async () => await GetPlansAsync(index)">@index</MudButton>
+    }
+</div>
+
