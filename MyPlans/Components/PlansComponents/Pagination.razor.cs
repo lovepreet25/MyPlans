@@ -89,11 +89,11 @@ namespace MyPlans.Components.PlansComponents
             }
             catch (APIException ex)
                 {
-              
+                    _errorMessage = ex.ApiErrorsResponses.Message;
                 }
             catch (Exception ex)
                 {
-
+                    _errorMessage = ex.Message;
                 }
         }
     }

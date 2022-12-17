@@ -4,7 +4,7 @@ using MyPlansLibrary.Responses;
 
 namespace PlansTestProject.LoginRequestTests
 {
-    public class LoginTests
+    public class ApiResponseTests
 
     {
         [Fact]
