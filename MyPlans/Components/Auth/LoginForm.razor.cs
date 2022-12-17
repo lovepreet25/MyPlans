@@ -45,7 +45,7 @@ namespace MyPlans.Components.Auth
 
                 await AuthenticationStateProvider.GetAuthenticationStateAsync();
 
-                Navigation.NavigateTo("/");
+                Navigation.NavigateTo("/home");
 
 
             }

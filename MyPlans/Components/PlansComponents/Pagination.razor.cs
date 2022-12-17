@@ -71,7 +71,7 @@ namespace MyPlans.Components.PlansComponents
         private async Task DeletePlanAsync(Plan plan)
         {
             var parameters = new DialogParameters();
-            parameters.Add("ContentText", "Do you really want to remove the  Plan '{plan.Title}'? ");
+            parameters.Add("ContentText", "Do you really want to remove the  Selected Plan? ");
             parameters.Add("ButtonText", "Delete");
             parameters.Add("Color", Color.Error);
 
