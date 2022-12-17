@@ -15,5 +15,8 @@ namespace MyPlansServices.Interfaces
         Task<ApiResponses<PlanDetails>> GetByIdAsync(string id);
         Task<ApiResponses<PlanDetails>> CreateAsync(PlanDetails model, FormFile coverFile);
         Task<ApiResponses<PlanDetails>> EditAsync(PlanDetails model, FormFile coverFile);
+
+        Task DeleteAsync(string id);
+
     }
 }

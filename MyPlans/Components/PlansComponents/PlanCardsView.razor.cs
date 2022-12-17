@@ -16,7 +16,10 @@ namespace MyPlans.Components.PlansComponents
         [Parameter]
         public Func<string, int, int, Task<Pagination<Plan>>> FetchPlans { get; set; }
 
-
+        [Parameter]
+        public EventCallback<Plan> OnEditClicked { get; set; }
+        [Parameter]
+        public EventCallback<Plan> OnDeleteClicked { get; set; }
         private Pagination<Plan> _result = new ();
 
         protected async override Task OnInitializedAsync()
@@ -32,9 +35,8 @@ namespace MyPlans.Components.PlansComponents
             _isBusy = false;
         }
 
-        private void EditPlan(Plan plan)
-        {
-            Navigation.NavigateTo($"plans/form/{plan.Id}");
-        }
+
+
+       
     }
 }

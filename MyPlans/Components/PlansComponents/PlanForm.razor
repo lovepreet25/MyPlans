@@ -23,7 +23,7 @@
 			<MudText Typo="Typo.subtitle2">@_fileName</MudText>
 		}
 
-		@if (string.IsNullOrWhiteSpace(_errorMessage))
+		@if (!string.IsNullOrWhiteSpace(_errorMessage))
 		{
 			<MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="my-2">@_errorMessage</MudAlert>
 		}

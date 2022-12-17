@@ -38,6 +38,16 @@ namespace MyPlansServices
             }
         }
 
+        public async Task DeleteAsync(string id)
+        {
+            var response = await _client.DeleteAsync($"/api/v2/plans/{id}");
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiErrorsResponses>();
+                throw new APIException(errorResponse, response.StatusCode);
+            }
+        }
+
         public async
             Task<ApiResponses<PlanDetails>> EditAsync(PlanDetails model, FormFile coverFile)
         {

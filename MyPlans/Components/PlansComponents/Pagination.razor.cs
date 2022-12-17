@@ -6,13 +6,21 @@ using MyPlansServices;
 using MyPlansServices.Exceptions;
 using System.Linq.Expressions;
 using MyPlansLibrary.Models;
+using MudBlazor;
 
 namespace MyPlans.Components.PlansComponents
 {
     public partial class Pagination
     {
         [Inject]
-        public IPlanServices PlanServices{ get; set; } 
+        public NavigationManager Navigation { get; set;}
+
+
+        [Inject]
+        public IPlanServices PlanServices{ get; set; }
+        [Inject]
+        public IDialogService DialogService { get; set; }
+        
         private bool _isBusy=false;
         private string _errorMessage = string.Empty;    
         private int _pageNumber= 1;
@@ -54,6 +62,26 @@ namespace MyPlans.Components.PlansComponents
         }
         private void SetTableView()
         { _isCardsViewEnabled = false; }
+        private void EditPlan(Plan plan)
+        {
+            Navigation.NavigateTo($"plans/form/{plan.Id}");
+        }
+        private async Task DeletePlanAsync(Plan plan)
+        {
+            var parameters = new DialogParameters();
+            parameters.Add("ContentText", "Do you really want to remove the  Plan '{plan.Title}'? ");
+            parameters.Add("ButtonText", "Delete");
+            parameters.Add("Color", Color.Error);
 
+            var options = new DialogOptions() { CloseButton = true, MaxWidth = MaxWidth.ExtraSmall };
+
+            var dialogresult = DialogService.Show<ConfirmDialog>("Delete", parameters, options);
+            var confirmResult = await dialogresult.Result;
+            if (!confirmResult.Cancelled)
+            {
+                await PlanServices.DeleteAsync(plan.Id);
+            }
+
+        }
     }
 }
