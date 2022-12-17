@@ -7,6 +7,8 @@ using MyPlansServices.Exceptions;
 using System.Linq.Expressions;
 using MyPlansLibrary.Models;
 using MudBlazor;
+using AKSoftware.Blazor.Utilities;
+using System.Runtime.CompilerServices;
 
 namespace MyPlans.Components.PlansComponents
 {
@@ -78,10 +80,21 @@ namespace MyPlans.Components.PlansComponents
             var dialogresult = DialogService.Show<ConfirmDialog>("Delete", parameters, options);
             var confirmResult = await dialogresult.Result;
             if (!confirmResult.Cancelled)
+           try
+            
             {
-                await PlanServices.DeleteAsync(plan.Id);
-            }
 
+                await PlanServices.DeleteAsync(plan.Id);
+                    MessagingCenter.Send(this, "plan_deleted", plan);
+            }
+            catch (APIException ex)
+                {
+              
+                }
+            catch (Exception ex)
+                {
+
+                }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using AKSoftware.Blazor.Utilities;
+using Microsoft.AspNetCore.Components;
 using MyPlansLibrary.Models;
 
 namespace MyPlans.Components.PlansComponents
@@ -21,6 +22,15 @@ namespace MyPlans.Components.PlansComponents
         [Parameter]
         public EventCallback<Plan> OnDeleteClicked { get; set; }
         private Pagination<Plan> _result = new ();
+        protected override async void OnInitialized()
+        {
+            MessagingCenter.Subscribe<Pagination, Plan>(this, "plan_deleted", async (sender, args) =>
+            {
+                await GetPlansAsync(_pageNumber);
+                StateHasChanged();
+
+            });
+        }
 
         protected async override Task OnInitializedAsync()
         {
